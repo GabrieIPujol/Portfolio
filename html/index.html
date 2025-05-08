@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7n5+jTXT0ovviZB21tfCw5yRmPwLylfsStp" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Gabriel Pujol</h1>
+            </div>
+            <div class="menu-icon" id="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../html/areas.html">Áreas</a></li>
+                <li><a href="../html/sobre.html">Sobre</a></li>
+                <li><a href="../html/tendencias.html">Tendencias</a></li>
+                <li><a href="../html/projetos.html">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.getElementById('nav-links');
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <section id="sobre" class="py-5">
+        <div class="container text-center">
+            <h2>Portfólio</h2>
+            <p>Aqui você poderá encontrar um pouco sobre mim e meus projetos!</p>
+        </div>
+    </section>
+
+    <section id="certificados" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2>Certificados</h2>
+            <p>Aqui estão algumas das minhas certificações. Caso tenha interesse em saber mais, você pode baixar meu currículo na aba "Sobre".</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>Curso de inglês</h4>
+                    <p>Curso intensivo de inglês com duração de 5 anos. Foi aqui que comecei e aprendi tudo o que sei sobre o idioma - Wise Up.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Intercâmbio</h4>
+                    <p>Realizei um intercâmbio de 2 semanas em Boston, EUA. Lá, consegui melhorar bastante minha fala e compreensão, além de aprender muito sobre a cultura e o idioma - EF Education First.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Ensino Médio Técnico</h4>
+                    <p>Cursando o Ensino Médio Técnico em T.I. - Senac Nações Unidas.</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Curso de Segurança e Endpoint.</h4>
+                    <p>Com esse curso, que possui uma duração de 27 horas, aprendi bastante sobre cybersecurity, com foco em ferramentas antivírus, firewalls, criptografia e políticas de segurança.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Entre em Contato</h2>
+            <form action="#" method="POST">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Gabriel Pujol Amaral Gurgel Velosa. Todos os direitos reservados.</p>
+            <p>
+                <strong>Contato:</strong> +55 (11) 95729-9485 | 
+                <a href="gabriel.pagvelosa@gmail.com" class="text-light">gabriel.pagvelosa@gmail.com</a>
+            </p>
+            <p>
+                <a href="https://www.instagram.com/biel_pujol/" class="text-light" target="_blank">
+                    <img src="../img/instagram.png" alt="Instagram" width="20" style="vertical-align: middle;"> Instagram
+                </a> |
+                <a href="https://github.com/BielPujol1" class="text-light" target="_blank">
+                    <img src="../img/github.png" alt="GitHub" width="20" style="vertical-align: middle;"> GitHub
+                </a> |
+                <a href="https://wa.me/qr/5BWRLOAAJ2GOL1" class="text-light" target="_blank">
+                    <img src="../img/whatsapp.png" alt="WhatsApp" width="20" style="vertical-align: middle;"> WhatsApp
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7n5+jTXT0ovviZB21tfCw5yRmPwLylfsStp" crossorigin="anonymous"></script>
+</body>
+</html>

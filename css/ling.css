@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #009c8c;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #00d1b2;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #00d1b2;
+    color: white;
+    border: 2px solid white;
+}
+
+.project-details {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.project-description,
+.project-info {
+    margin-top: 1rem;
+}
+
+.project-description h2,
+.project-info h2 {
+    color: #00d1b2;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-info ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.project-info li {
+    margin-bottom: 0.5rem;
+}
+
+.project-info strong {
+    font-weight: bold;
+}
+
+.project-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.link-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #00d1b2;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.link-button:hover {
+    background-color: #00d1b2;
+}
