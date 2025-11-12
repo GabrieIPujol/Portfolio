@@ -1,112 +1,232 @@
+/* =====================================================
+   PROJETOS PAGE - DESIGN PROFISSIONAL
+   ===================================================== */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --primary-light: #3b82f6;
+    --accent-color: #10b981;
+    --accent-light: #34d399;
+    --dark-bg: #0f172a;
+    --dark-secondary: #1e293b;
+    --light-bg: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #94a3b8;
+    --border-color: #e2e8f0;
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Inter', sans-serif;
-    background: #0e1621;
-    color: #f5f5f5;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
 }
 
 header {
-    background: linear-gradient(135deg, #1e3c72, #00d1b2);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    color: white;
 }
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
 header h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #fff;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.02em;
 }
+
 header p {
-    font-size: 1.3rem;
-    opacity: 0.85;
+    font-size: 1.2rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    font-weight: 300;
 }
 
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    padding: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .project-card {
-    background: #1b2735;
-    border-radius: 15px;
+    background: white;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
 }
+
 .project-image {
-    height: 200px;
+    height: 220px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
 }
+
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-bottom: 3px solid #00d1b2;
-}
-.project-content {
-    padding: 1.5rem;
-}
-.project-content h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #00d1b2;
-}
-.project-content p {
-    font-size: 1rem;
-    color: #ddd;
-    margin-bottom: 1.5rem;
-}
-.project-link {
-    text-decoration: none;
-    background: #00d1b2;
-    color: #0e1621;
-    padding: 0.7rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: background 0.3s ease;
-}
-.project-link:hover {
-    background: #009c8c;
+    transition: var(--transition);
 }
 
-.back-button {
-    margin-top: 1.5rem;
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+}
+
+.project-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.7;
+}
+
+.project-link {
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: var(--transition);
+    display: inline-block;
+    align-self: flex-start;
+    box-shadow: var(--shadow-md);
+}
+
+.project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.back-button-section {
+    padding: 2rem;
     text-align: center;
 }
 
-.back-button a {
+.back-button {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #00d1b2;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 footer {
     text-align: center;
-    background: #131d2a;
-    color: #999;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    padding: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 footer p {
     font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .projects {
+        padding: 2rem 1rem;
+    }
 }

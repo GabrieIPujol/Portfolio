@@ -1,0 +1,289 @@
+/* =====================================================
+   PÁGINA DE TÓPICO - DESIGN PROFISSIONAL
+   USE ESTE CSS PARA: cn.css, mat.css, ling.css, chsa.css
+   E OUTRAS PÁGINAS DE TÓPICOS SIMILARES
+   ===================================================== */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --primary-light: #3b82f6;
+    --accent-color: #10b981;
+    --accent-light: #34d399;
+    --dark-bg: #0f172a;
+    --dark-secondary: #1e293b;
+    --light-bg: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #94a3b8;
+    --border-color: #e2e8f0;
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    letter-spacing: -0.02em;
+}
+
+.header p {
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    line-height: 1.7;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 1;
+}
+
+.back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* =====================================================
+   PROJETO / CONTEÚDO PRINCIPAL
+   ===================================================== */
+
+.project-details {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 3rem 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.project-image:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-description,
+.project-info {
+    margin-top: 2rem;
+}
+
+.project-description h2,
+.project-info h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.project-description p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.project-info ul {
+    list-style-type: none;
+    margin-top: 1.5rem;
+}
+
+.project-info li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.project-info li:hover {
+    background: #f1f5f9;
+    border-left-color: var(--accent-color);
+}
+
+.project-info strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.project-info p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.project-link {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.link-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.link-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .project-details {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .project-description h2,
+    .project-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .back-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .link-button {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 2rem 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.6rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .project-details {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .project-image {
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-description h2,
+    .project-info h2 {
+        font-size: 1.3rem;
+    }
+
+    .project-info li {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .back-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .link-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}

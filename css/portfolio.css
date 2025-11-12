@@ -1,215 +1,345 @@
+/* =====================================================
+   PORTFOLIO PAGE - DESIGN PROFISSIONAL
+   ===================================================== */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e40af;
+    --primary-light: #3b82f6;
+    --accent-color: #10b981;
+    --accent-light: #34d399;
+    --dark-bg: #0f172a;
+    --dark-secondary: #1e293b;
+    --light-bg: #f8fafc;
+    --text-dark: #1e293b;
+    --text-light: #94a3b8;
+    --border-color: #e2e8f0;
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f7f7f7;
+    color: var(--text-dark);
+    background-color: var(--light-bg);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 2rem;
 }
+
+/* =====================================================
+   HERO SECTION
+   ===================================================== */
 
 .hero {
     position: relative;
-    background: url('../img/portfolio.png') no-repeat center center/cover; 
-    height: 100vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-overlay {
-    background: rgba(0, 0, 0, 0.6); 
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
 .hero-text {
     position: relative;
     z-index: 2;
+    animation: slideInUp 0.8s ease-out;
 }
 
-
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    font-weight: 300;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 1rem 2.5rem;
     font-size: 1rem;
-    color: white;
-    background: #00d1b2;
+    color: var(--dark-bg);
+    background: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: var(--shadow-lg);
 }
 
 .cta-button:hover {
-    background: #009c8c;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* =====================================================
+   ABOUT SECTION
+   ===================================================== */
+
 .about-section {
-    padding: 60px 20px;
+    padding: 4rem 2rem;
     background: white;
     text-align: center;
-    margin-top: -50px;
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
 }
 
 .about-section h2 {
     font-size: 2.5rem;
-    color: #00d1b2;
-    margin-bottom: 20px;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 800;
 }
 
 .about-section p {
     font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #555;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .preview-image {
     width: 100%;
-    max-width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    margin-top: 2rem;
+    transition: var(--transition);
 }
 
+.preview-image:hover {
+    transform: scale(1.03);
+}
+
+/* =====================================================
+   DOWNLOAD SECTION
+   ===================================================== */
+
 .download-section {
-    background: #00d1b2;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
-    padding: 50px 20px;
+    padding: 4rem 2rem;
     text-align: center;
-    border-radius: 15px;
-    margin: 40px auto;
+    border-radius: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .download-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
 }
 
 .download-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
 }
 
 .download-button {
     display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    color: white;
-    background: #009c8c;
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    background: white;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 1;
 }
 
 .download-button:hover {
-    background: #009c8c;
-    transform: scale(1.1);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
 }
 
-.download-section {
-    background: #00d1b2;
-    color: white;
-    padding: 50px 20px;
+/* =====================================================
+   BACK BUTTON SECTION
+   ===================================================== */
+
+.back-button-section {
+    padding: 2rem;
     text-align: center;
-    border-radius: 15px;
-    margin: 40px auto;
-}
-
-.download-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.download-section p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.download-button {
-    display: inline-block;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    color: white;
-    background: #009c8c;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.download-button:hover {
-    background: #009c8c;
-    transform: scale(1.1);
-}
-
-
-.back-button section {
-    background: #009c8c;
-    color: white;
-    padding: 50px 20px;
-    text-align: center;
-    border-radius: 15px;
-    margin: 40px auto;
-}
-
-.back-button h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.back-button p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
 }
 
 .back-button {
     display: inline-block;
-    padding: 5px 30px;
-    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
     color: white;
-    background: #009c8c;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
     text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
 }
 
 .back-button:hover {
-    background: #009c8c;
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 .footer {
     text-align: center;
-    padding: 20px;
-    background: #f1f1f1;
-    color: #555;
-    border-top: 2px solid #ddd;
-    margin-top: 20px;
+    padding: 2rem;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* =====================================================
+   ANIMAÇÕES
+   ===================================================== */
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .about-section h2 {
+        font-size: 2rem;
+    }
+
+    .download-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .download-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .download-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
 }

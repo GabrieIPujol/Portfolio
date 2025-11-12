@@ -1,53 +1,127 @@
+/* =====================================================
+   DESIGN PROFISSIONAL E MODERNO - PORTFOLIO GABRIEL
+   ===================================================== */
+
+/* VARIÁVEIS DE COR */
+:root {
+    --primary-color: #2563eb;           /* Azul profissional */
+    --primary-dark: #1e40af;            /* Azul escuro */
+    --primary-light: #3b82f6;           /* Azul claro */
+    --accent-color: #10b981;            /* Verde esmeralda */
+    --accent-light: #34d399;            /* Verde claro */
+    --dark-bg: #0f172a;                 /* Background escuro */
+    --dark-secondary: #1e293b;          /* Secundário escuro */
+    --light-bg: #f8fafc;                /* Background claro */
+    --text-dark: #1e293b;               /* Texto escuro */
+    --text-light: #94a3b8;              /* Texto claro */
+    --border-color: #e2e8f0;            /* Borda */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.2);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #333;
-    color: #333;
-    padding-top: 0px;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   TIPOGRAFIA
+   ===================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: var(--transition);
 }
 
-h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 1rem;
-}
+/* =====================================================
+   NAVBAR / NAVEGAÇÃO
+   ===================================================== */
 
-p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
+header {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 1rem 1rem;
-    position: relative;
+    padding: 1.2rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.navbar .logo h1 {
+.logo h1 {
     color: white;
-    font-size: 24px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 3rem;
-    transition: transform 0.3s ease;
+    gap: 2.5rem;
+    align-items: center;
+    transition: var(--transition);
 }
 
 .nav-links li {
@@ -56,166 +130,477 @@ p {
 
 .nav-links a {
     color: white;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 0.5rem;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-light), var(--accent-color));
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #00d1b2;
+    color: var(--accent-light);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 .menu-icon {
     display: none;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
     cursor: pointer;
 }
 
 .menu-icon .bar {
-    width: 30px;
-    height: 4px;
-    background-color: white;
-    transition: 0.3s;
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: var(--transition);
 }
 
 .nav-links.active {
     display: flex;
     flex-direction: column;
-    background-color: #333;
+    background-color: var(--dark-secondary);
     position: absolute;
-    top: 60px; 
+    top: 70px;
     right: 0;
     left: 0;
-    padding: 1rem;
+    padding: 2rem 1rem;
     gap: 1rem;
+    border-top: 1px solid var(--primary-color);
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .menu-icon {
-        display: flex; 
-    }
-}
+/* =====================================================
+   SEÇÕES GERAIS
+   ===================================================== */
 
 section {
-    padding: 60px 20px;
+    padding: 5rem 2rem;
+    transition: var(--transition);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* =====================================================
+   HERO SECTION (SOBRE)
+   ===================================================== */
+
+#sobre {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 7rem 2rem;
+}
+
+#sobre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+#sobre .container {
+    position: relative;
+    z-index: 1;
+}
+
+#sobre h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#sobre p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+/* =====================================================
+   CERTIFICADOS / CARDS
+   ===================================================== */
+
+#certificados {
+    background-color: var(--light-bg);
+    padding: 5rem 2rem;
+}
+
+#certificados h2 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
     text-align: center;
 }
 
-#sobre {
-    background: linear-gradient(135deg, #00d1b2, #009c8c);
-    color: white;
-}
-
-#certificados {
-    background-color: #f8f8f8;
-}
-
-#contato {
-    background-color: #f0f0f0;
+#certificados > .container > p {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
 }
 
 #certificados .row {
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 #certificados .col-md-3 {
-    background-color: #fff;
-    padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+#certificados .col-md-3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(16, 185, 129, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 #certificados .col-md-3:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: var(--accent-color);
+}
+
+#certificados .col-md-3:hover::before {
+    opacity: 1;
 }
 
 #certificados h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #00d1b2;
+    color: var(--primary-color);
+    font-size: 1.3rem;
     margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-#certificados p {
-    font-size: 1rem;
-    color: #666;
+#certificados .col-md-3 p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
-.text-center{
-    color:#00d1b2;
+/* =====================================================
+   SEÇÃO DE CONTATO
+   ===================================================== */
+
+#contato {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%);
+    padding: 5rem 2rem;
 }
 
-.contact-section {
-    padding: 2rem;
-    background: #1b1b1f;
+#contato h2 {
+    color: white;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 400px;
+    gap: 1.5rem;
+    max-width: 500px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
-form input, form textarea, form button {
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
+form label {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+form input,
+form textarea {
+    padding: 0.95rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 form button {
-    background: #00d1b2;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
     color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-md);
 }
 
 form button:hover {
-    background: #009c8c; 
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
+form button:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
 footer {
-    background-color: #111;
-    color: #bbb;
-    padding: 30px 0;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    padding: 3rem 2rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer .container {
     text-align: center;
 }
 
+footer p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
 footer a {
-    color: #bbb;
-    font-size: 1.1rem;
-    margin: 0 15px;
-    transition: color 0.3s ease;
+    color: var(--text-light);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 1rem;
+    transition: var(--transition);
 }
 
 footer a:hover {
-    color: #00d1b2;
+    color: var(--accent-light);
+    transform: translateY(-2px);
 }
 
 footer img {
-    vertical-align: middle;
-    margin-right: 8px;
-    width: 20px;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: var(--transition);
 }
 
-footer img:hover {
+footer a:hover img {
     opacity: 1;
+}
+
+footer strong {
+    color: white;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+   ===================================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    .nav-links {
+        display: none;
+        gap: 1rem;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-links.active {
+        display: flex;
+        gap: 1rem;
+    }
+
+    #sobre {
+        padding: 4rem 1rem;
+    }
+
+    #sobre h2 {
+        font-size: 2rem;
+    }
+
+    #sobre p {
+        font-size: 1rem;
+    }
+
+    #certificados .row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    form {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    footer a {
+        margin: 0.5rem 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .navbar {
+        padding: 0.8rem;
+    }
+
+    #sobre {
+        padding: 3rem 1rem;
+    }
+
+    #sobre h2 {
+        font-size: 1.6rem;
+    }
+
+    #contato {
+        padding: 3rem 1rem;
+    }
+
+    form {
+        padding: 1.5rem 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+/* =====================================================
+   ANIMAÇÕES
+   ===================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* =====================================================
+   CLASSE UTILITÁRIA
+   ===================================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
 }
 
 
