@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useLanguage } from "../contexts/language-context"
 import { CustomCursor } from "./custom-cursor"
+import { TypedTitle } from "./typed-title"
 
 export function Hero() {
   const { t } = useLanguage()
@@ -13,7 +14,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-visible">
       <CustomCursor enabled={true} />
 
       {/* Animated Background */}
@@ -41,17 +42,17 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center pb-12">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent text-balance"
+              className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-cyan-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent text-balance overflow-visible leading-[1.1] pb-2"
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
               style={{ backgroundSize: "200% auto" }}
             >
-              {t("hero.title")}
+              <TypedTitle words={["Gabriel Pujol", "Full Stack Developer"]} />
             </motion.h1>
           </motion.div>
 
