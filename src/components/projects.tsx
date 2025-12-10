@@ -67,7 +67,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
             {t("projects.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t("projects.subtitle")}</p>

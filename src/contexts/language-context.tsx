@@ -16,11 +16,11 @@ const translations = {
       title: "Full Stack Developer",
       subtitle: "Building modern and innovative solutions",
       description:
-        "Passionate about technology and creating exceptional digital experiences. Specialized in web development with modern technologies.",
+        "Passionate about technology and creating exceptional digital experiences. Specialized in software development with modern technologies.",
     },
     education: {
       title: "Education",
-      subtitle: "My academic journey from elementary school to university",
+      subtitle: "My academic journey, was fundamental in shaping the professional I am today. My education provided me with the necessary foundation and knowledge to face current challenges and drive my objectives forward.",
       elementary: {
         level: "Elementary School",
         institution: "School Name",
@@ -115,11 +115,11 @@ const translations = {
       title: "Desenvolvedor Full Stack",
       subtitle: "Construindo soluções modernas e inovadoras",
       description:
-        "Apaixonado por tecnologia e por criar experiências digitais excepcionais. Especializado em desenvolvimento web com tecnologias modernas.",
+        "Apaixonado por tecnologia e por criar experiências digitais excepcionais. Especializado em desenvolvimento de software com tecnologias modernas.",
     },
     education: {
       title: "Educação",
-      subtitle: "Minha jornada acadêmica desde o fundamental até a graduação",
+      subtitle: "minha jornada acadêmica, que foi fundamental para moldar o profissional que sou hoje. Minha formação me proporcionou as bases e o conhecimento necessário para enfrentar os desafios atuais e impulsionar meus objetivos.",
       elementary: {
         level: "Ensino Fundamental",
         institution: "Nome da Escola",
