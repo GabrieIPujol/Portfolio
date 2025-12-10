@@ -52,7 +52,7 @@ export function Hero() {
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
               style={{ backgroundSize: "200% auto" }}
             >
-              <TypedTitle words={["Gabriel Pujol", "Full Stack Developer"]} />
+              <TypedTitle words={["Gabriel Pujol Amaral Gurgel Velosa", "Full Stack Developer"]} />
             </motion.h1>
           </motion.div>
 

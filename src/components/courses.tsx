@@ -67,10 +67,26 @@ export function Courses() {
               initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
               animate={isInView ? { opacity: 1, scale: 1, rotate: 0 } : { opacity: 0, scale: 0.5, rotate: -10 }}
               transition={{ duration: 0.6, delay: index * 0.15, type: "spring" }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
+              whileHover={{ scale: 1.02, rotate: 0 }}
               className="relative group"
             >
-              {/* Hexagonal shape using clip-path */}
+              <div className="pointer-events-none absolute inset-0">
+                <div
+                  className="absolute inset-2 opacity-0 group-hover:opacity-70 transition duration-500 blur-xl bg-linear-to-br from-cyan-500/25 via-transparent to-blue-500/25"
+                  style={{
+                    clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                    aspectRatio: "1",
+                  }}
+                />
+                <div
+                  className="absolute inset-1 opacity-0 group-hover:opacity-80 transition duration-500 border border-cyan-400/40 shadow-[0_0_35px_rgba(34,211,238,0.35)]"
+                  style={{
+                    clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                    aspectRatio: "1",
+                  }}
+                />
+              </div>
+
               <div
                 className="relative"
                 style={{
@@ -78,14 +94,12 @@ export function Courses() {
                   aspectRatio: "1",
                 }}
               >
-                {/* Animated border */}
                 <motion.div
                   className={`absolute inset-0 bg-linear-to-br ${course.color} opacity-50`}
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
                 />
 
-                {/* Inner hexagon */}
                 <div
                   className="absolute inset-1 bg-card"
                   style={{
@@ -93,7 +107,6 @@ export function Courses() {
                   }}
                 >
                   <div className="h-full flex flex-col items-center justify-center p-8 text-center">
-                    {/* Icon */}
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 360 }}
                       transition={{ duration: 0.5 }}
@@ -102,17 +115,14 @@ export function Courses() {
                       <Award className="w-8 h-8 text-white" />
                     </motion.div>
 
-                    {/* Title */}
                     <h3 className="text-lg font-bold mb-2 leading-tight">
                       <span className={`bg-linear-to-r ${course.color} bg-clip-text text-transparent`}>
                         {course.title}
                       </span>
                     </h3>
 
-                    {/* Institution */}
                     <p className="text-sm font-semibold text-muted-foreground mb-2">{course.institution}</p>
 
-                    {/* Date */}
                     <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
                       <Calendar className="w-3 h-3" />
                       <span>{course.date}</span>
@@ -121,17 +131,17 @@ export function Courses() {
                 </div>
               </div>
 
-              {/* Skills list below hexagon */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                whileHover={{ opacity: 1, y: 0 }}
-                className="mt-6 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="mt-6 space-y-2 transition-opacity duration-300"
               >
                 {course.skills.split(",").map((skill: any, i: any) => (
                   <motion.div
                     key={i}
                     initial={{ x: -20, opacity: 0 }}
-                    whileHover={{ x: 0, opacity: 1 }}
+                    animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
                     transition={{ delay: i * 0.1 }}
                     className="flex items-center gap-2 text-sm"
                   >

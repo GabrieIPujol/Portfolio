@@ -75,25 +75,28 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-10 h-10 pointer-events-none z-9999 mix-blend-difference"
+      className="fixed top-0 left-0 w-10 h-10 pointer-events-none mix-blend-difference"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
+        zIndex: 999999,
       }}
       animate={{
-        opacity: isOverNavOrFooter ? 0 : 1,
-        scale: isOverNavOrFooter ? 0 : 1,
+        // when over nav/footer, keep visible but slightly smaller and more translucent
+        opacity: isOverNavOrFooter ? 0.75 : 1,
+        scale: isOverNavOrFooter ? 0.8 : 1,
       }}
-      transition={{ duration: 0.2 }}
+      transition={{ duration: 0.18 }}
     >
       <motion.div
         className="w-full h-full rounded-full border-2 flex items-center justify-center"
         animate={{
-          scale: isHovering ? 2 : 1,
-          borderColor: isHovering ? '#06b6d4' : '#ffffff',
-          backgroundColor: isHovering ? 'rgba(6, 182, 212, 0.2)' : 'transparent',
+          // combine hover and nav/footer states
+          scale: isHovering ? 1 : isOverNavOrFooter ? 0.8 : 1,
+          borderColor: isHovering ? '#06b6d4' : isOverNavOrFooter ? 'rgba(255,255,255,0.6)' : '#ffffff',
+          backgroundColor: isHovering ? 'rgba(6,182,212,0.2)' : isOverNavOrFooter ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.7)',
         }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.18 }}
       >
         {isHovering && hoverText && (
           <motion.span

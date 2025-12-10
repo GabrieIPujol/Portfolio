@@ -1,50 +1,57 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
-import { Code2, Database, Cloud, Cpu } from "lucide-react"
+import { useRef } from "react"
 import { useLanguage } from "../contexts/language-context"
 
 export function Technologies() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
   const { t } = useLanguage()
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
-  const techCategories = [
-    {
-      icon: Code2,
-      category: t("technologies.frontend.category"),
-      color: "from-cyan-500 to-blue-500",
-      items: t("technologies.frontend.items")
-        .split(",")
-        .map((s) => s.trim()),
-    },
-    {
-      icon: Database,
-      category: t("technologies.backend.category"),
-      color: "from-blue-500 to-cyan-600",
-      items: t("technologies.backend.items")
-        .split(",")
-        .map((s) => s.trim()),
-    },
-    {
-      icon: Cloud,
-      category: t("technologies.database.category"),
-      color: "from-cyan-600 to-blue-600",
-      items: t("technologies.database.items")
-        .split(",")
-        .map((s) => s.trim()),
-    },
-    {
-      icon: Cpu,
-      category: t("technologies.tools.category"),
-      color: "from-blue-600 to-cyan-700",
-      items: t("technologies.tools.items")
-        .split(",")
-        .map((s) => s.trim()),
-    },
+  const techIcons = [
+    { name: "HTML5", color: "#E34F26", icon: "https://cdn.simpleicons.org/html5/E34F26" },
+    { name: "CSS3", color: "#1572B6", icon: "https://cdn.simpleicons.org/css/1572B6" },
+    { name: "JavaScript", color: "#F7DF1E", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
+    { name: "TypeScript", color: "#3178C6", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
+    { name: "React", color: "#61DAFB", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+    { name: "Next.js", color: "#000000", icon: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+    { name: "Vite", color: "#646CFF", icon: "https://cdn.simpleicons.org/vite/646CFF" },
+    { name: "Tailwind", color: "#38BDF8", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" },
+    { name: "Node.js", color: "#339933", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+    { name: "PHP", color: "#FFFFFF", icon: "https://cdn.simpleicons.org/php/FFFFFF" },
+    { name: "FastAPI", color: "#009688", icon: "https://cdn.simpleicons.org/fastapi/009688" },
+    { name: "Python", color: "#3776AB", icon: "https://cdn.simpleicons.org/python/3776AB" },
+    { name: "Docker", color: "#2496ED", icon: "https://cdn.simpleicons.org/docker/2496ED" },
+    { name: "Git", color: "#F05032", icon: "https://cdn.simpleicons.org/git/F05032" },
+    { name: "MongoDB", color: "#47A248", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+    { name: "PostgreSQL", color: "#4169E1", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
+    { name: "MySQL", color: "#4479A1", icon: "https://cdn.simpleicons.org/MySQL/4479A1" },
+    { name: "Vercel", color: "#000000", icon: "https://cdn.simpleicons.org/vercel/FFFFFF" },
+    { name: "Figma", color: "#F24E1E", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
+    { name: "Github", color: "#181717", icon: "https://cdn.simpleicons.org/github/FFFFFF" },
+    { name: "Wordpress", color: "#21759B", icon: "https://cdn.simpleicons.org/wordpress/21759B" },
+    { name: "Elementor", color: "#92003B", icon: "https://cdn.simpleicons.org/elementor/92003B" },
+    { name: "Cursor", color: "#00000", icon: "https://cdn.simpleicons.org/cursor/FFFFFF" },
+    { name: "Apache NetBeans", color: "#1B6AC6", icon: "https://cdn.simpleicons.org/apachenetbeanside/1B6AC6" },
+    { name: "Cisco", color: "#1BA0D7", icon: "https://cdn.simpleicons.org/cisco/1BA0D7" },
+    { name: "Google Gemini", color: "#8E75B2", icon: "https://cdn.simpleicons.org/googlegemini/8E75B2" },
+    { name: "Perplexity", color: "#1FB8CD", icon: "https://cdn.simpleicons.org/perplexity/1FB8CD" },
+    { name: "Claude", color: "#D97757", icon: "https://cdn.simpleicons.org/claude/D97757" },
+    { name: "v0", color: "#000000", icon: "https://cdn.simpleicons.org/v0/FFFFFF" },
+    { name: "Google Cloud", color: "#4285F4", icon: "https://cdn.simpleicons.org/googlecloud/4285F4" },
+    { name: "XAMPP", color: "#FB7A24", icon: "https://cdn.simpleicons.org/xampp/FB7A24" },
+    { name: "Netlify", color: "#00C7B7", icon: "https://cdn.simpleicons.org/netlify/00C7B7" },
+    { name: "Hostinger", color: "#673DE6", icon: "https://cdn.simpleicons.org/hostinger/673DE6" },
+    { name: "Github Pages", color: "#222222", icon: "https://cdn.simpleicons.org/githubpages/FFFFFF" },
+    { name: "Lighthouse", color: "#F44B21", icon: "https://cdn.simpleicons.org/lighthouse/F44B21" },
   ]
+
+  const trackOne = [...techIcons, ...techIcons]
+  const trackTwo = [...techIcons.slice().reverse(), ...techIcons.slice().reverse()]
+  // Ajuste rápido de velocidade: menor = mais rápido, maior = mais lento
+  const trackSpeedOne = 26
+  const trackSpeedTwo = 32
 
   return (
     <section id="technologies" ref={ref} className="py-20 md:py-32 relative bg-muted/30 overflow-hidden">
@@ -60,139 +67,93 @@ export function Technologies() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="w-full max-w-none relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 px-2 sm:px-4 lg:px-6 pb-2"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
             {t("technologies.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">{t("technologies.subtitle")}</p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {techCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative"
-            >
+        <div className="relative w-full space-y-6 px-0">
+          <div className="absolute inset-0 bg-linear-to-b from-cyan-500/5 via-transparent to-blue-500/5 blur-3xl pointer-events-none" />
+
+          <div className="overflow-hidden bg-card/70 backdrop-blur-xl">
+            <div className="relative h-32 md:h-36">
+              <div className="absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background to-transparent pointer-events-none" />
+
               <motion.div
-                className={`absolute -inset-1 bg-linear-to-r ${category.color} rounded-3xl opacity-0 group-hover:opacity-50 transition duration-500`}
-                animate={hoveredIndex === index ? { rotate: [0, 5, -5, 0] } : {}}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              />
-
-              <div className="relative bg-card/80 border-2 border-border/50 rounded-3xl overflow-hidden">
-                {/* Animated gradient overlay */}
+                className="absolute inset-0 flex items-center"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.1, duration: 0.6 }}
+              >
                 <motion.div
-                  className={`absolute inset-0 bg-linear-to-br ${category.color} opacity-0 group-hover:opacity-10`}
-                  animate={
-                    hoveredIndex === index
-                      ? {
-                          background: [
-                            `linear-gradient(0deg, var(--tw-gradient-stops))`,
-                            `linear-gradient(360deg, var(--tw-gradient-stops))`,
-                          ],
-                        }
-                      : {}
-                  }
-                  transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
-                />
-
-                {/* Scan line effect */}
-                {hoveredIndex === index && (
-                  <motion.div
-                    className={`absolute left-0 right-0 h-px bg-linear-to-r ${category.color}`}
-                    initial={{ top: 0 }}
-                    animate={{ top: "100%" }}
-                    transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                  />
-                )}
-
-                {/* Content */}
-                <div className="p-8 relative z-10">
-                  {/* Header */}
-                  <div className="flex items-center gap-4 mb-8">
+                  className="flex items-center gap-6 min-w-max"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{ duration: trackSpeedOne, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                >
+                  {trackOne.map((tech, i) => (
                     <motion.div
-                      animate={
-                        hoveredIndex === index
-                          ? {
-                              scale: [1, 1.2, 1],
-                              rotate: [0, 180, 360],
-                            }
-                          : {}
-                      }
-                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                      className={`relative p-4 rounded-2xl bg-linear-to-br ${category.color}`}
+                      key={`track1-${i}`}
+                      whileHover={{ scale: 1.08, y: -4, boxShadow: "0 10px 35px rgba(6,182,212,0.25)" }}
+                      className="flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md"
                     >
-                      <category.icon className="w-7 h-7 text-white relative z-10" />
-
-                      {/* Pulsing ring */}
-                      <motion.div
-                        className={`absolute inset-0 rounded-2xl bg-linear-to-br ${category.color}`}
-                        animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
-                        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                      />
-                    </motion.div>
-
-                    <h3 className="text-2xl font-bold">
-                      <span className={`bg-linear-to-r ${category.color} bg-clip-text text-transparent`}>
-                        {category.category}
-                      </span>
-                    </h3>
-                  </div>
-
-                  {/* Tech items in flowing layout */}
-                  <div className="flex flex-wrap gap-3">
-                    {category.items.map((item, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                        transition={{ duration: 0.3, delay: index * 0.1 + i * 0.05 }}
-                        whileHover={{
-                          scale: 1.15,
-                          y: -5,
-                          boxShadow: "0 10px 30px rgba(6, 182, 212, 0.3)",
-                        }}
-                        className="relative group/item"
+                      <div
+                        className="h-10 w-10 rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center"
+                        style={{ boxShadow: `0 10px 30px ${tech.color}33` }}
                       >
-                        {/* Chip background with gradient border */}
-                        <div
-                          className={`relative px-4 py-2 bg-card border-2 border-border rounded-xl font-medium text-sm cursor-default overflow-hidden`}
-                        >
-                          {/* Animated gradient border on hover */}
-                          <motion.div
-                            className={`absolute inset-0 bg-linear-to-r ${category.color} opacity-0 group-hover/item:opacity-20`}
-                            whileHover={{ opacity: 0.2 }}
-                          />
+                        <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
+                      </div>
+                      <span className="text-sm font-semibold text-white/90">{tech.name}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
 
-                          {/* Text */}
-                          <span className="relative z-10">{item}</span>
+          <div className="overflow-hidden bg-card/70 backdrop-blur-xl">
+            <div className="relative h-32 md:h-36">
+              <div className="absolute inset-y-0 left-0 w-16 bg-linear-to-r from-background to-transparent pointer-events-none" />
+              <div className="absolute inset-y-0 right-0 w-16 bg-linear-to-l from-background to-transparent pointer-events-none" />
 
-                          {/* Corner accent */}
-                          <div
-                            className={`absolute top-0 right-0 w-2 h-2 bg-linear-to-br ${category.color} opacity-0 group-hover/item:opacity-100 transition-opacity`}
-                          />
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom accent line */}
-                <div className={`h-1 bg-linear-to-r ${category.color} opacity-50`} />
-              </div>
-            </motion.div>
-          ))}
+              <motion.div
+                className="absolute inset-0 flex items-center"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
+                <motion.div
+                  className="flex items-center gap-6 min-w-max"
+                  animate={{ x: ["-50%", "0%"] }}
+                  transition={{ duration: trackSpeedTwo, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                >
+                  {trackTwo.map((tech, i) => (
+                    <motion.div
+                      key={`track2-${i}`}
+                      whileHover={{ scale: 1.08, y: -4, boxShadow: "0 10px 35px rgba(59,130,246,0.25)" }}
+                      className="flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md"
+                    >
+                      <div
+                        className="h-10 w-10 rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center"
+                        style={{ boxShadow: `0 10px 30px ${tech.color}33` }}
+                      >
+                        <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
+                      </div>
+                      <span className="text-sm font-semibold text-white/90">{tech.name}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
