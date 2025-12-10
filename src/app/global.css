@@ -173,11 +173,12 @@
   50%, 100% { opacity: 0 }
 }
 
-nav.fixed{
+nav[class*="fixed"] {
   cursor: default !important;
 }
 
-nav.fixed button,
-nav.fixed a {
+/* 2. Garante que os botões voltem ao pointer */
+nav[class*="fixed"] button,
+nav[class*="fixed"] a {
   cursor: pointer !important;
 }
