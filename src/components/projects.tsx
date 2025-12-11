@@ -5,7 +5,10 @@ import { useRef, useState } from "react"
 import { ExternalLink, Github, Sparkles } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { useLanguage } from "../contexts/language-context"
-import sampleImage from "../assets/teste.jpg"
+import projectImgForniture from "../assets/forniture-project.png"
+import projectImgPringles from "../assets/pringles-project.png"
+import projectImgProgress from "../assets/InProgress-project.png"
+import projectImgSnake from "../assets/snakeGame-project.png"
 
 export function Projects() {
   const ref = useRef(null)
@@ -16,23 +19,32 @@ export function Projects() {
     {
       title: t("projects.project1.title"),
       description: t("projects.project1.description"),
-      tech: ["React", "Node.js", "MongoDB"],
+      tech: ["HTML", "CSS", "JavaScript"],
       gradient: "from-cyan-500 to-blue-500",
-      image: sampleImage,
+      image: projectImgForniture,
+      codeLink: "https://github.com/GabrieIPujol/Furniture",
+      demoLink: "https://gabrieipujol.github.io/Furniture/src/assets/html/index.html",
     },
     {
       title: t("projects.project2.title"),
       description: t("projects.project2.description"),
-      tech: ["Next.js", "TypeScript", "Tailwind"],
+      tech: ["HTML/CSS", "JavaScript/GSAP", "Frameworks"],
       gradient: "from-blue-500 to-cyan-600",
-      image: sampleImage,
+      image: projectImgPringles,
     },
     {
       title: t("projects.project3.title"),
       description: t("projects.project3.description"),
-      tech: ["Python", "FastAPI", "PostgreSQL"],
+      tech: ["HTML/CSS", "JavaScript", "Frameworks"],
       gradient: "from-cyan-600 to-blue-600",
-      image: sampleImage,
+      image: projectImgProgress,
+    },
+    {
+      title: t("projects.project4.title"),
+      description: t("projects.project4.description"),
+      tech: ["HTML", "CSS", "JavaScript"],
+      gradient: "from-cyan-600 to-blue-600",
+      image: projectImgSnake,
     },
   ]
 

@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { GraduationCap, BookOpen, School } from "lucide-react"
+import { GraduationCap, BookOpen, School, Earth, Plane} from "lucide-react"
 import { useLanguage } from "../contexts/language-context"
 
 export function Education() {
@@ -32,6 +32,22 @@ export function Education() {
       period: t("education.university.period"),
       description: t("education.university.description"),
       color: "from-blue-500 to-cyan-600",
+    },
+    {
+      icon: Earth,
+      level: t("education.english.level"),
+      institution: t("education.english.institution"),
+      period: t("education.english.period"),
+      description: t("education.english.description"),
+      color: "from-blue-500 to-cyan-600",
+    },
+    {
+      icon: Plane,
+      level: t("education.exchange.level"),
+      institution: t("education.exchange.institution"),
+      period: t("education.exchange.period"),
+      description: t("education.exchange.description"),
+      color: "from-cyan-500 to-blue-500",
     },
   ]
 

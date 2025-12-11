@@ -73,7 +73,7 @@ export function TypedTitle({ words, className = "" }: TypedTitleProps) {
           // start a mistake only sometimes (e.g. 25% chance)
           if (Math.random() < 0.25) {
             // start a mistake: create 2-3 wrong chars
-            const len = Math.random() < 0.5 ? 2 : 3
+            const len = Math.random() < 0.5 ? 2 : 4
             const letters = "abcdefghijklmnopqrstuvwxyz"
             let wrong = ""
             for (let i = 0; i < len; i++) {
