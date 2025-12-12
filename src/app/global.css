@@ -182,3 +182,8 @@ nav[class*="fixed"] button,
 nav[class*="fixed"] a {
   cursor: pointer !important;
 }
+
+/* ::-webkit-scrollbar-thumb{
+  background-color: var(--sidebar);
+} */
+

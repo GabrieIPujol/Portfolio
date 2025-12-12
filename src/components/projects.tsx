@@ -8,7 +8,7 @@ import { useLanguage } from "../contexts/language-context"
 import projectImgForniture from "../assets/forniture-project.png"
 import projectImgPringles from "../assets/pringles-project.png"
 import projectImgProgress from "../assets/InProgress-project.png"
-import projectImgSnake from "../assets/snakeGame-project.png"
+import projectImgSnakeGame from "../assets/snakeGame-project.jpg"
 
 export function Projects() {
   const ref = useRef(null)
@@ -19,7 +19,7 @@ export function Projects() {
     {
       title: t("projects.project1.title"),
       description: t("projects.project1.description"),
-      tech: ["HTML", "CSS", "JavaScript"],
+      tech: ["HTML", "CSS", "JavaScript"],  
       gradient: "from-cyan-500 to-blue-500",
       image: projectImgForniture,
       codeLink: "https://github.com/GabrieIPujol/Furniture",
@@ -31,6 +31,8 @@ export function Projects() {
       tech: ["HTML/CSS", "JavaScript/GSAP", "Frameworks"],
       gradient: "from-blue-500 to-cyan-600",
       image: projectImgPringles,
+      codeLink: "https://github.com/GabrieIPujol/Pringles-Project",
+      demoLink: "https://gabrieipujol.github.io/Pringles-Project/Pringles/index.html",
     },
     {
       title: t("projects.project3.title"),
@@ -38,13 +40,17 @@ export function Projects() {
       tech: ["HTML/CSS", "JavaScript", "Frameworks"],
       gradient: "from-cyan-600 to-blue-600",
       image: projectImgProgress,
+      codeLink: "https://github.com/GabrieIPujol/Furniture",
+      demoLink: "https://gabrieipujol.github.io/Furniture/src/assets/html/index.html",
     },
     {
       title: t("projects.project4.title"),
       description: t("projects.project4.description"),
       tech: ["HTML", "CSS", "JavaScript"],
       gradient: "from-cyan-600 to-blue-600",
-      image: projectImgSnake,
+      image: projectImgSnakeGame,
+      codeLink: "https://github.com/GabrieIPujol/Snake-Game",
+      demoLink: "https://gabrieipujol.github.io/Snake-Game/",
     },
   ]
 
@@ -108,15 +114,16 @@ function ProjectCard({ project, index, isInView }: any) {
       className="relative group cursor-pointer h-full"
     >
       <motion.div
-        className={`absolute -inset-[0.5px] bg-linear-to-r ${project.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-[2px] transition duration-300`}
+        className={`absolute -inset-[0.5px] bg-linear-to-r ${project.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-[2px] transition duration-300 pointer-events-none`}
         animate={isHovered ? { scale: 1.005 } : { scale: 1 }}
       />
 
       {/* Card */}
       <div className="relative bg-card border-2 border-border rounded-3xl overflow-hidden h-full flex flex-col">
+        
         {/* Shine effect on hover */}
         <motion.div
-          className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent"
+          className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none"
           initial={{ x: "-100%" }}
           animate={isHovered ? { x: "100%" } : { x: "-100%" }}
           transition={{ duration: 0.6 }}
@@ -126,7 +133,7 @@ function ProjectCard({ project, index, isInView }: any) {
         <div className={`h-2 bg-linear-to-r ${project.gradient}`} />
 
         {/* Content */}
-        <div className="p-6 relative flex-1 flex flex-col">
+        <div className="p-6 relative z-10 flex-1 flex flex-col">
           {/* Preview image */}
           <div className="mb-4">
             <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-muted/30 aspect-16/10">
@@ -138,13 +145,14 @@ function ProjectCard({ project, index, isInView }: any) {
                 animate={isHovered ? { scale: 1.05 } : { scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
+              {/* Overlay da imagem já tinha pointer-events-none, mas é bom garantir */}
               <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent pointer-events-none" />
             </div>
           </div>
 
           {/* Corner sparkle */}
           <motion.div
-            className="absolute top-4 right-4"
+            className="absolute top-4 right-4 pointer-events-none" // Adicione aqui também por segurança
             animate={isHovered ? { rotate: 360, scale: 1.2 } : { rotate: 0, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
@@ -161,7 +169,7 @@ function ProjectCard({ project, index, isInView }: any) {
             <p className="text-muted-foreground leading-relaxed min-h-16">{project.description}</p>
 
             <div className="mt-auto space-y-3">
-              {/* Tech stack with pills */}
+              {/* Tech stack */}
               <div className="flex flex-wrap gap-2 py-2">
                 {project.tech.map((tech: string, i: number) => (
                   <motion.span
@@ -174,35 +182,49 @@ function ProjectCard({ project, index, isInView }: any) {
                 ))}
               </div>
 
-              {/* Action buttons */}
+              {/* Action buttons (Onde você quer o clique) */}
               <motion.div
-                className="flex gap-2 pt-2 min-h-11"
+                className="flex gap-2 pt-2 min-h-11 relative z-20" 
                 initial={{ opacity: 0 }}
                 animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
               >
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="gap-2 border-cyan-500/50 hover:bg-cyan-500/10 bg-transparent"
-                >
-                  <Github className="w-4 h-4" />
-                  Code
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="gap-2 border-blue-500/50 hover:bg-blue-500/10 bg-transparent"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  Demo
-                </Button>
+                 {/* Opção usando window.open */}
+                 {project.codeLink && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="gap-2 border-cyan-500/50 hover:bg-cyan-500/10 bg-transparent cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation(); 
+                        window.open(project.codeLink, "_blank");
+                      }}
+                    >
+                      <Github className="w-4 h-4" />
+                      Code
+                    </Button>
+                  )}
+
+                  {project.demoLink && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="gap-2 border-blue-500/50 hover:bg-blue-500/10 bg-transparent cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(project.demoLink, "_blank");
+                      }}
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Demo
+                    </Button>
+                  )}
               </motion.div>
             </div>
           </div>
         </div>
 
         {/* Bottom decoration */}
-        <div className={`absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t ${project.gradient} opacity-5`} />
+        <div className={`absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t ${project.gradient} opacity-5 pointer-events-none`} />
       </div>
     </motion.div>
   )
