@@ -177,8 +177,7 @@ export function Footer() {
             className="flex items-center gap-4"
           >
             <span className="text-xs text-muted-foreground">
-              {t("footer.made") || "Made with"} <span className="text-cyan-500">❤</span> {t("footer.by") || "by"}{" "}
-              {t("footer.developer") || "Developer"}
+              {t("footer.made") || "Gabriel Pujol Amaral Gurgel Velosa"} <span className="text-cyan-500">|</span> {t("footer.by") || "by"}{" "}
             </span>
 
             <Button

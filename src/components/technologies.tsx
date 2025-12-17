@@ -15,11 +15,11 @@ export function Technologies() {
     { name: "JavaScript", color: "#F7DF1E", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
     { name: "TypeScript", color: "#3178C6", icon: "https://cdn.simpleicons.org/typescript/3178C6" },
     { name: "React", color: "#61DAFB", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-    { name: "Next.js", color: "#000000", icon: "https://cdn.simpleicons.org/nextdotjs/FFFFFF" },
+    { name: "Next.js", color: "#000000", icon: "https://cdn.simpleicons.org/nextdotjs/000000" },
     { name: "Vite", color: "#646CFF", icon: "https://cdn.simpleicons.org/vite/646CFF" },
     { name: "Tailwind", color: "#38BDF8", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" },
     { name: "Node.js", color: "#339933", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
-    { name: "PHP", color: "#FFFFFF", icon: "https://cdn.simpleicons.org/php/FFFFFF" },
+    { name: "PHP", color: "#1E88E5", icon: "https://cdn.simpleicons.org/php/1E88E5" },
     { name: "FastAPI", color: "#009688", icon: "https://cdn.simpleicons.org/fastapi/009688" },
     { name: "Python", color: "#3776AB", icon: "https://cdn.simpleicons.org/python/3776AB" },
     { name: "Docker", color: "#2496ED", icon: "https://cdn.simpleicons.org/docker/2496ED" },
@@ -27,23 +27,23 @@ export function Technologies() {
     { name: "MongoDB", color: "#47A248", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
     { name: "PostgreSQL", color: "#4169E1", icon: "https://cdn.simpleicons.org/postgresql/4169E1" },
     { name: "MySQL", color: "#4479A1", icon: "https://cdn.simpleicons.org/MySQL/4479A1" },
-    { name: "Vercel", color: "#000000", icon: "https://cdn.simpleicons.org/vercel/FFFFFF" },
+    { name: "Vercel", color: "#000000", icon: "https://cdn.simpleicons.org/vercel/000000" },
     { name: "Figma", color: "#F24E1E", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
-    { name: "Github", color: "#181717", icon: "https://cdn.simpleicons.org/github/FFFFFF" },
+    { name: "Github", color: "#181717", icon: "https://cdn.simpleicons.org/github/181717" },
     { name: "Wordpress", color: "#21759B", icon: "https://cdn.simpleicons.org/wordpress/21759B" },
     { name: "Elementor", color: "#92003B", icon: "https://cdn.simpleicons.org/elementor/92003B" },
-    { name: "Cursor", color: "#00000", icon: "https://cdn.simpleicons.org/cursor/FFFFFF" },
+    { name: "Cursor", color: "#55544F", icon: "https://cdn.simpleicons.org/cursor/55544F" },
     { name: "Apache NetBeans", color: "#1B6AC6", icon: "https://cdn.simpleicons.org/apachenetbeanside/1B6AC6" },
     { name: "Cisco", color: "#1BA0D7", icon: "https://cdn.simpleicons.org/cisco/1BA0D7" },
     { name: "Google Gemini", color: "#8E75B2", icon: "https://cdn.simpleicons.org/googlegemini/8E75B2" },
     { name: "Perplexity", color: "#1FB8CD", icon: "https://cdn.simpleicons.org/perplexity/1FB8CD" },
     { name: "Claude", color: "#D97757", icon: "https://cdn.simpleicons.org/claude/D97757" },
-    { name: "v0", color: "#000000", icon: "https://cdn.simpleicons.org/v0/FFFFFF" },
+    { name: "v0", color: "#000000", icon: "https://cdn.simpleicons.org/v0/000000" },
     { name: "Google Cloud", color: "#4285F4", icon: "https://cdn.simpleicons.org/googlecloud/4285F4" },
     { name: "XAMPP", color: "#FB7A24", icon: "https://cdn.simpleicons.org/xampp/FB7A24" },
     { name: "Netlify", color: "#00C7B7", icon: "https://cdn.simpleicons.org/netlify/00C7B7" },
     { name: "Hostinger", color: "#673DE6", icon: "https://cdn.simpleicons.org/hostinger/673DE6" },
-    { name: "Github Pages", color: "#222222", icon: "https://cdn.simpleicons.org/githubpages/FFFFFF" },
+    { name: "Github Pages", color: "#55544F", icon: "https://cdn.simpleicons.org/githubpages/55544F" },
     { name: "Lighthouse", color: "#F44B21", icon: "https://cdn.simpleicons.org/lighthouse/F44B21" },
   ]
 
@@ -111,7 +111,7 @@ export function Technologies() {
                       >
                         <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
                       </div>
-                      <span className="text-sm font-semibold text-white/90">{tech.name}</span>
+                      <span className="text-sm font-semibold text-muted-foreground">{tech.name}</span>
                     </motion.div>
                   ))}
                 </motion.div>
@@ -147,7 +147,7 @@ export function Technologies() {
                       >
                         <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
                       </div>
-                      <span className="text-sm font-semibold text-white/90">{tech.name}</span>
+                      <span className="text-sm font-semibold text-muted-foreground">{tech.name}</span>
                     </motion.div>
                   ))}
                 </motion.div>

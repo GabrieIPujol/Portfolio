@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "homepage": "https://github.com/GabrieIPujol/Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",

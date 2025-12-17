@@ -40,8 +40,8 @@ export function Projects() {
       tech: ["HTML/CSS", "JavaScript", "Frameworks"],
       gradient: "from-cyan-600 to-blue-600",
       image: projectImgProgress,
-      codeLink: "https://github.com/GabrieIPujol/Furniture",
-      demoLink: "https://gabrieipujol.github.io/Furniture/src/assets/html/index.html",
+      codeLink: "https://github.com/GabrieIPujol/CarDealership",
+      demoLink: "https://gabrieipujol.github.io/CarDealership/src/index.html",
     },
     {
       title: t("projects.project4.title"),

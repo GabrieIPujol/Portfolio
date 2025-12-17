@@ -115,9 +115,10 @@ const translations = {
       },
     },
     footer: {
-      made: "Made with",
-      by: "by a passionate developer",
+      made: "Gabriel Pujol Amaral Gurgel Velosa",
+      by: "Portfolio",
       rights: "All rights reserved",
+      description: "Portfolio developed using React, TypeScript, and Tailwind",
     },
   },
   pt: {
@@ -230,9 +231,10 @@ const translations = {
       },
     },
     footer: {
-      made: "Feito com",
-      by: "por um desenvolvedor apaixonado",
+      made: "Gabriel Pujol Amaral Gurgel Velosa",
+      by: "Portifolio",
       rights: "Todos os direitos reservados",
+      description: "Portfólio desenvolvido com React, TypeScript e Tailwind",
     },
   },
 }

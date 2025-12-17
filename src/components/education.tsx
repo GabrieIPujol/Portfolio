@@ -5,7 +5,7 @@ import { useLanguage } from "../contexts/language-context"
 
 export function Education() {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, amount: 0.3 })
+  const isInView = useInView(ref, { once: false, amount: 0.1 })
   const { t } = useLanguage()
 
   const educationData = [
