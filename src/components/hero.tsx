@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useLanguage } from "../contexts/language-context"
-// import { CustomCursor } from "./custom-cursor"
 import { TypedTitle } from "./typed-title"
 
 export function Hero() {

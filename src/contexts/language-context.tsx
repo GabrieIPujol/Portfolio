@@ -5,7 +5,7 @@ import { createContext, useContext, useState, type ReactNode } from "react"
 type Language = "en" | "pt"
 
 const translations = {
-  en: {
+  pt: {
     nav: {
       education: "Education",
       projects: "Projects",
@@ -29,7 +29,7 @@ const translations = {
       },
       highschool: {
         level: "Technical High School Degree in IT",
-        institution: "High School Name",
+        institution: "Senac",
         period: "2022 - 2024",
         description: "Now, already working with programming, networks, and fundamentals, I was getting a spoiler of what I would see in college. The technical high school definitely boosted my learning a lot and prepared me professionally for any challenge.",
       },
@@ -121,7 +121,7 @@ const translations = {
       description: "Portfolio developed using React, TypeScript, and Tailwind",
     },
   },
-  pt: {
+  en: {
     nav: {
       education: "Educação",
       projects: "Projetos",
