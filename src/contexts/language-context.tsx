@@ -115,11 +115,16 @@ const translations = {
       },
     },
     footer: {
-      made: "Gabriel Pujol Amaral Gurgel Velosa",
-      by: "Portfolio",
-      rights: "All rights reserved",
+      quickLinks: "Quick Links",
+      connect: "Connect",
+      available: "Available worldwide",
+      madeBy: "Made by",
+      rights: "All rights reserved.",
       description: "Portfolio developed using React, TypeScript, and Tailwind",
     },
+    cursor: {
+      view: "VIEW"
+    }
   },
   en: {
     nav: {
@@ -231,11 +236,16 @@ const translations = {
       },
     },
     footer: {
-      made: "Gabriel Pujol Amaral Gurgel Velosa",
-      by: "Portifolio",
-      rights: "Todos os direitos reservados",
+      quickLinks: "Links Rápidos",
+      connect: "Conectar",
+      available: "Disponível para todo o mundo",
+      madeBy: "Feito por",
+      rights: "Todos os direitos reservados.",
       description: "Portfólio desenvolvido com React, TypeScript e Tailwind",
     },
+    cursor: {
+      view: "VER"
+    }
   },
 }
 
@@ -248,10 +258,10 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en")
+  const [language, setLanguage] = useState<Language>("pt")
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "en" ? "pt" : "en"))
+    setLanguage((prev) => (prev === "pt" ? "en" : "pt"))
   }
 
   const t = (key: string): string => {

@@ -145,14 +145,13 @@ function ProjectCard({ project, index, isInView }: any) {
                 animate={isHovered ? { scale: 1.05 } : { scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               />
-              {/* Overlay da imagem já tinha pointer-events-none, mas é bom garantir */}
               <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent pointer-events-none" />
             </div>
           </div>
 
           {/* Corner sparkle */}
           <motion.div
-            className="absolute top-4 right-4 pointer-events-none" // Adicione aqui também por segurança
+            className="absolute top-4 right-4 pointer-events-none"
             animate={isHovered ? { rotate: 360, scale: 1.2 } : { rotate: 0, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
@@ -182,13 +181,14 @@ function ProjectCard({ project, index, isInView }: any) {
                 ))}
               </div>
 
-              {/* Action buttons (Onde você quer o clique) */}
+              {/* Action buttons - AJUSTADO PARA MOBILE E TABLET */}
               <motion.div
-                className="flex gap-2 pt-2 min-h-11 relative z-20" 
+                // No desktop (lg), usamos a animação do Framer Motion baseada no isHovered
+                // No mobile/tablet, forçamos a opacidade para 1 via Tailwind
                 initial={{ opacity: 0 }}
-                animate={isHovered ? { opacity: 1 } : { opacity: 0 }}
+                animate={{ opacity: window.innerWidth < 1024 ? 1 : (isHovered ? 1 : 0) }}
+                className="flex gap-2 pt-2 min-h-11 relative z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
               >
-                 {/* Opção usando window.open */}
                  {project.codeLink && (
                     <Button
                       size="sm"

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Twitter, Code2, Sparkles, ArrowUp, Globe } from "lucide-react"
+import { Github, Linkedin, Mail, Code2, Sparkles, ArrowUp, Globe, Instagram } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { useLanguage } from "../contexts/language-context"
 
@@ -9,17 +9,18 @@ export function Footer() {
   const { t } = useLanguage()
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", color: "group-hover:text-purple-400" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", color: "group-hover:text-blue-400" },
-    { icon: Twitter, href: "#", label: "Twitter", color: "group-hover:text-cyan-400" },
-    { icon: Mail, href: "#", label: "Email", color: "group-hover:text-pink-400" },
+    { icon: Github, href: "https://github.com/GabrieIPujol", label: "GitHub", color: "group-hover:text-purple-400" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/gabriel-pujol-073577300/", label: "LinkedIn", color: "group-hover:text-blue-400" },
+    // Alterei para Instagram para condizer com o seu link, mas mantendo a cor ciano
+    { icon: Instagram, href: "https://www.instagram.com/biel_pujol", label: "Instagram", color: "group-hover:text-cyan-400" },
+    { icon: Mail, href: "mailto:gabriel.pagvelosa@gmail.com", label: "Email", color: "group-hover:text-pink-400" },
   ]
 
   const quickLinks = [
-    { name: "Education", href: "#education" },
-    { name: "Projects", href: "#projects" },
-    { name: "Courses", href: "#courses" },
-    { name: "Technologies", href: "#technologies" },
+    { name: t("nav.education") || "Education", href: "#education" },
+    { name: t("nav.projects") || "Projects", href: "#projects" },
+    { name: t("nav.courses") || "Courses", href: "#courses" },
+    { name: t("nav.technologies") || "Technologies", href: "#technologies" },
   ]
 
   const scrollToTop = () => {
@@ -32,32 +33,17 @@ export function Footer() {
       <div className="absolute inset-0 opacity-30">
         <motion.div
           className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
+          animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
+          transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
         />
         <motion.div
           className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
-            ease: "easeInOut",
-          }}
+          animate={{ x: [0, -100, 0], y: [0, -50, 0] }}
+          transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
         />
       </div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
-        {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Brand section */}
           <motion.div
@@ -74,25 +60,17 @@ export function Footer() {
                 >
                   <Code2 className="w-8 h-8 text-cyan-500" />
                 </motion.div>
-                <motion.div
-                  className="absolute inset-0"
-                  animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                >
-                  <Code2 className="w-8 h-8 text-cyan-500" />
-                </motion.div>
               </div>
               <h3 className="text-2xl font-bold bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent">
                 Portfolio
               </h3>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
-              {t("footer.description") ||
-                "Building innovative solutions with cutting-edge technologies and creative design."}
+              {t("footer.description") || "Building innovative solutions with cutting-edge technologies and creative design."}
             </p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Globe className="w-4 h-4" />
-              <span>Available worldwide</span>
+              <span>{t("footer.available") || "Available worldwide"}</span>
             </div>
           </motion.div>
 
@@ -104,7 +82,7 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-cyan-500" />
-              Quick Links
+              {t("footer.quickLinks") || "Quick Links"}
             </h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
@@ -121,18 +99,22 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Connect section */}
+          {/* Connect section - CORRIGIDO PARA BLANK */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold mb-4">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4">
+              {t("footer.connect") || "Connect"}
+            </h4>
             <div className="grid grid-cols-2 gap-3">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={index}
                   href={link.href}
+                  target="_blank"           // Abre em nova aba
+                  rel="noopener noreferrer" // Segurança adicional
                   className="group relative p-4 rounded-xl border border-border hover:border-cyan-500/50 bg-card/50 backdrop-blur-sm transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -150,7 +132,7 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Divider with animation */}
+        {/* Divider */}
         <div className="relative h-px bg-linear-to-r from-transparent via-border to-transparent mb-8">
           <motion.div
             className="absolute inset-0 bg-linear-to-r from-transparent via-cyan-500 to-transparent"
@@ -161,58 +143,23 @@ export function Footer() {
 
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-sm text-muted-foreground"
-          >
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Portfolio. {t("footer.rights") || "All rights reserved."}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center gap-4"
-          >
+          </p>
+          <div className="flex items-center gap-4">
             <span className="text-xs text-muted-foreground">
-              {t("footer.made") || "Gabriel Pujol Amaral Gurgel Velosa"} <span className="text-cyan-500">|</span> {t("footer.by") || "by"}{" "}
+               {t("footer.madeBy") || "Made by"} Gabriel Pujol Amaral Gurgel Velosa
             </span>
-
             <Button
               variant="outline"
               size="icon"
               onClick={scrollToTop}
               className="rounded-full border-cyan-500/50 hover:bg-cyan-500/10 hover:border-cyan-500 group bg-transparent"
             >
-              <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                <ArrowUp className="w-4 h-4 group-hover:text-cyan-500" />
-              </motion.div>
+              <ArrowUp className="w-4 h-4 group-hover:text-cyan-500" />
             </Button>
-          </motion.div>
+          </div>
         </div>
-
-        {/* Floating particles */}
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-cyan-500/50 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [-20, 20],
-              opacity: [0, 1, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Number.POSITIVE_INFINITY,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
       </div>
     </footer>
   )

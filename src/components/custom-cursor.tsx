@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { createPortal } from 'react-dom'
+import { useLanguage } from '../contexts/language-context' // Verifique se o caminho está correto
 
 interface CustomCursorProps {
   enabled?: boolean
@@ -12,6 +14,9 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
   const [isOverNavOrFooter, setIsOverNavOrFooter] = useState(false)
   const styleRef = useRef<HTMLStyleElement | null>(null)
 
+  // 1. Acessamos o contexto de linguagem
+  const { language } = useLanguage()
+
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
 
@@ -23,7 +28,6 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
     setMounted(true)
     if (!enabled) return
 
-    // Add cursor: none style to document
     if (!styleRef.current) {
       styleRef.current = document.createElement('style')
       styleRef.current.textContent = '* { cursor: none !important; }'
@@ -51,8 +55,9 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
         target.classList.contains('cursor-hover')
       ) {
         setIsHovering(true)
-        const text = target.getAttribute('data-cursor-text') || 'VIEW'
-        setHoverText(text)
+        // Pegamos o texto do atributo, se existir
+        const text = target.getAttribute('data-cursor-text')
+        setHoverText(text || '') 
       } else {
         setIsHovering(false)
         setHoverText('')
@@ -73,41 +78,53 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
 
   if (!mounted || !enabled) return null
 
-  return (
+  // 2. Lógica de tradução: 
+  // Se o elemento não tiver um texto específico no 'data-cursor-text', 
+  // ele decide entre VER ou VIEW baseado no idioma ativo.
+  const finalDisplayText = hoverText || (language === 'pt' ? 'VIEW' : 'VER')
+
+  return createPortal(
     <motion.div
-      className="fixed top-0 left-0 w-10 h-10 pointer-events-none"
+      className="fixed top-0 left-0 pointer-events-none"
       style={{
         x: cursorXSpring,
         y: cursorYSpring,
-        zIndex: 99999,
-        mixBlendMode: isOverNavOrFooter ? 'normal' : 'difference'
+        zIndex: 999999,
+        width: 40,
+        height: 40,
+        mixBlendMode: isOverNavOrFooter ? "normal" : "difference",
       }}
-      animate={{
-        // when over nav/footer, keep visible but slightly smaller and more translucent
-        opacity: isOverNavOrFooter ? 1 : 1,
-        scale: isOverNavOrFooter ? 0.6 : 1,
-      }}
-      transition={{ duration: 0.18 }}
     >
       <motion.div
         className="w-full h-full rounded-full border-2 flex items-center justify-center"
         animate={{
-          // combine hover and nav/footer states
-          scale: isHovering ? 1.2 : 1,
-          borderColor: isOverNavOrFooter ? '#06b6d4' : (isHovering ? '#06b6d4' : '#ffffff'),
-          backgroundColor: isOverNavOrFooter ? 'rgba(6,182,212,0.1)' : (isHovering ? 'rgba(6,182,212,0.2)' : 'transparent'),
+          scale: isHovering ? 1 : 0.8,
+          opacity: 1, 
+          borderColor: isHovering 
+            ? (isOverNavOrFooter ? "#B03215" : "#06b6d4") 
+            : (isOverNavOrFooter ? "#06b6d4" : "#ffffff"),
+
+          backgroundColor: isHovering 
+            ? (isOverNavOrFooter ? "rgba(176, 50, 21, 0.25)" : "rgba(6, 182, 212, 0.25)") 
+            : (isOverNavOrFooter ? "rgba(6, 182, 212, 0.1)" : "transparent"),
         }}
+        transition={{ duration: 0.2 }}
       >
-        {isHovering && hoverText && (
+        {isHovering && (
           <motion.span
-            initial={{ opacity: 0, scale: 0 }}
+            key={language} // 3. A key força o React a remontar o span ao trocar o idioma, garantindo a animação
+            initial={{ opacity: 0, scale: 0.8}}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-[8px] font-bold text-white"
+            className="text-[8px] font-bold"
+            style={{
+              color: isOverNavOrFooter ? "#FFF0F0" : "#F0F0FF"
+            }}
           >
-            {hoverText}
+            {finalDisplayText}
           </motion.span>
         )}
       </motion.div>
-    </motion.div>
+    </motion.div>,
+    document.body
   )
 }
