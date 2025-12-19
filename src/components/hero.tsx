@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
 import { useLanguage } from "../contexts/language-context"
-import { CustomCursor } from "./custom-cursor"
+// import { CustomCursor } from "./custom-cursor"
 import { TypedTitle } from "./typed-title"
 
 export function Hero() {
@@ -15,7 +15,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-visible">
-      <CustomCursor enabled={true} />
+      {/* <CustomCursor enabled={true} /> */}
 
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">

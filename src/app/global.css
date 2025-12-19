@@ -125,6 +125,11 @@
 
 *{
   font-family: 'Poppins', sans-serif;
+  cursor: none !important;
+}
+
+.custom-cursor-active *{
+  cursor: none !important;
 }
 
 @layer base {
@@ -177,17 +182,6 @@
   0%, 49% { opacity: 1 }
   50%, 100% { opacity: 0 }
 }
-
-nav[class*="fixed"] {
-  cursor: default !important;
-}
-
-/* 2. Garante que os botões voltem ao pointer */
-nav[class*="fixed"] button,
-nav[class*="fixed"] a {
-  cursor: pointer !important;
-}
-
 
 ::-webkit-scrollbar {
   width: 10px;

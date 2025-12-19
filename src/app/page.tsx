@@ -8,6 +8,7 @@ import { Technologies } from "../components/technologies"
 import { Footer } from "../components/footer"
 import { LanguageProvider } from "../contexts/language-context"
 import { ThemeProvider } from "../contexts/theme-context"
+import { CustomCursor } from "../components/custom-cursor"
 
 export default function Portfolio() {
   const { scrollYProgress } = useScroll()
@@ -16,6 +17,7 @@ export default function Portfolio() {
   return (
     <ThemeProvider>
       <LanguageProvider>
+      <CustomCursor enabled={true} />
         <div className="relative min-h-screen">
           <Navigation />
 
