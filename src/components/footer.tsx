@@ -150,6 +150,7 @@ export function Footer() {
                {t("footer.madeBy") || "Made by"} Gabriel Pujol Amaral Gurgel Velosa
             </span>
             <Button
+              aria-label="Scroll to top"
               variant="outline"
               size="icon"
               onClick={scrollToTop}
