@@ -76,6 +76,7 @@ export function Hero() {
       </div>
 
       <motion.button
+        aria-label="Scroll to education"
         onClick={scrollToEducation}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
         animate={{ y: [0, 10, 0] }}

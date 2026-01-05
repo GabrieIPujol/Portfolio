@@ -73,7 +73,7 @@ export function Navigation() {
             </div>
 
             <div className="flex items-center gap-2">
-              <Button variant="ghost" size="icon" onClick={toggleTheme} className="relative overflow-hidden">
+              <Button aria-label="Toggle theme" variant="ghost" size="icon" onClick={toggleTheme} className="relative overflow-hidden">
                 <motion.div
                   initial={false}
                   animate={{ rotate: theme === "dark" ? 0 : 180 }}
@@ -83,12 +83,12 @@ export function Navigation() {
                 </motion.div>
               </Button>
 
-              <Button variant="ghost" size="icon" onClick={toggleLanguage} className="relative">
+              <Button aria-label="Toggle language" variant="ghost" size="icon" onClick={toggleLanguage} className="relative">
                 <Languages className="h-5 w-5" />
                 <span className="absolute -top-1 -right-1 text-[10px] font-bold">
                   {language === "en" ? "PT" : "EN"}
                 </span>
-              </Button>
+              </Button> 
 
               <Button
                 variant="ghost"
