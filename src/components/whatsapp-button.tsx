@@ -7,7 +7,7 @@ export function WhatsAppButton() {
     /* Posicionamento: mais colado no mobile (bottom-4 left-4) */
     <div className="fixed bottom-4 left-4 md:bottom-10 md:left-10 z-9999">
       <motion.a
-        href="https://wa.me/5511999999999" // Substitua pelo seu número
+        href="https://wa.me/5511957299485" // Substitua pelo seu número
         target="_blank"
         rel="noopener noreferrer"
         /* MOBILE: h-10 w-10 (tamanho reduzido)

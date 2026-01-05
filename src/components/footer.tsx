@@ -9,11 +9,10 @@ export function Footer() {
   const { t } = useLanguage()
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/GabrieIPujol", label: "GitHub", color: "group-hover:text-purple-400" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/gabriel-pujol-073577300/", label: "LinkedIn", color: "group-hover:text-blue-400" },
-    // Alterei para Instagram para condizer com o seu link, mas mantendo a cor ciano
-    { icon: Instagram, href: "https://www.instagram.com/biel_pujol", label: "Instagram", color: "group-hover:text-cyan-400" },
-    { icon: Mail, href: "mailto:gabriel.pagvelosa@gmail.com", label: "Email", color: "group-hover:text-pink-400" },
+    { icon: Github, href: "https://github.com/GabrieIPujol", label: "GitHub", color: "group-hover:text-white" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/gabriel-pujol-073577300/", label: "LinkedIn", color: "group-hover:text-cyan-600" },
+    { icon: Instagram, href: "https://www.instagram.com/biel_pujol", label: "Instagram", color: "group-hover:text-purple-400" },
+    { icon: Mail, href: "mailto:gabriel.pagvelosa@gmail.com", label: "Email", color: "group-hover:text-blue-400" },
   ]
 
   const quickLinks = [
