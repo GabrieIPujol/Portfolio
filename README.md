@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+  📌 Gabriel Pujol – Portfolio
+  
+  Welcome! This repository contains the source code of my personal portfolio, which is hosted at:
+  
+  👉 https://gabriel-pujol-portfolio.netlify.app/
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  
+  💡 About
+  
+  My name is Gabriel Pujol, and this is my professional portfolio, where I showcase my projects, skills, and experiences. Here you can find a sample of my work, the technologies I use, and some information about my journey.
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  🧠 Technologies Used
+  
+  This project was developed using the following technologies:
+  
+  ✔️ React
+  ✔️ Tailwind CSS
+  ✔️ TypeScript
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-Currently, two official plugins are available:
+  🚀 Project Structure
+  
+  The main structure of the repository is:
+  
+  <img width="234" height="352" alt="image" src="https://github.com/user-attachments/assets/1837e3ff-e784-47f7-bfd3-21711a7dca03" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+  
+  🧰 Features
+  
+  ✨ Home page with personal presentation
+  
+  ✨ Projects section with links and descriptions
+  
+  ✨ Social media and contact links
+  
+  ✨ Responsive layout for mobile devices
+  
+  ✨ Fully responsive and accessible project
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-## React Compiler
+  💻 How to Use / Run Locally
+  
+  Clone the repository:
+  <img width="379" height="22" alt="image" src="https://github.com/user-attachments/assets/7a843977-caa6-4175-9601-1fdfbd82f276" />
+  
+  Enter the project folder:
+  <img width="89" height="15" alt="image" src="https://github.com/user-attachments/assets/2ee242bd-0b62-4314-84c9-7e5a801b694c" />
+  
+  Install the dependencies:
+  <img width="85" height="16" alt="image" src="https://github.com/user-attachments/assets/b0567cd3-8176-404a-84df-8cfb38146267" />
+  
+  Run the development server:
+  <img width="83" height="15" alt="image" src="https://github.com/user-attachments/assets/4d0d7de8-d152-49ff-9ea6-1629915838fb" />
+  
+  Open your browser and access:
+  <img width="246" height="16" alt="image" src="https://github.com/user-attachments/assets/c93316d9-5051-433b-82da-2a8f75748f63" />
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  📦 Deploy
+  
+  This portfolio is published via Netlify, and updates are automatically deployed from GitHub.
+  
+  🔗 https://gabriel-pujol-portfolio.netlify.app/
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-## Expanding the ESLint configuration
+  📫 Contact
+  
+  Want to get in touch? Find me on:
+  
+  📩 Email: gabriel.pagvelosa@gmail.com
+  
+  🔗 LinkedIn: https://www.linkedin.com/in/gabriel-pujol-073577300/
+  
+  🔗 GitHub: https://github.com/GabrieIPujol
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  ⭐ If you like this project
+  
+  If this project inspired you in any way, leave a ⭐ on the repository!
+  
+  It really helps me a lot!
