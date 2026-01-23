@@ -14,9 +14,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-visible">
-      {/* <CustomCursor enabled={true} /> */}
-
-      {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-linear-to-br from-background via-background to-cyan-950/10 dark:to-cyan-500/5" />
         {[...Array(20)].map((_, i) => (

@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { createPortal } from 'react-dom'
-import { useLanguage } from '../contexts/language-context' // Verifique se o caminho está correto
+import { useLanguage } from '../contexts/language-context' 
 
 interface CustomCursorProps {
   enabled?: boolean
@@ -14,7 +14,6 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
   const [isOverNavOrFooter, setIsOverNavOrFooter] = useState(false)
   const styleRef = useRef<HTMLStyleElement | null>(null)
 
-  // 1. Acessamos o contexto de linguagem
   const { language } = useLanguage()
 
   const cursorX = useMotionValue(-100)
@@ -55,7 +54,6 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
         target.classList.contains('cursor-hover')
       ) {
         setIsHovering(true)
-        // Pegamos o texto do atributo, se existir
         const text = target.getAttribute('data-cursor-text')
         setHoverText(text || '') 
       } else {
@@ -78,9 +76,6 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
 
   if (!mounted || !enabled) return null
 
-  // 2. Lógica de tradução: 
-  // Se o elemento não tiver um texto específico no 'data-cursor-text', 
-  // ele decide entre VER ou VIEW baseado no idioma ativo.
   const finalDisplayText = hoverText || (language === 'pt' ? 'VIEW' : 'VER')
 
   return createPortal(
@@ -112,7 +107,7 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
       >
         {isHovering && (
           <motion.span
-            key={language} // 3. A key força o React a remontar o span ao trocar o idioma, garantindo a animação
+            key={language} 
             initial={{ opacity: 0, scale: 0.8}}
             animate={{ opacity: 1, scale: 1 }}
             className="text-[8px] font-bold"

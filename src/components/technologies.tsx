@@ -49,7 +49,6 @@ export function Technologies() {
 
   const trackOne = [...techIcons, ...techIcons]
   const trackTwo = [...techIcons.slice().reverse(), ...techIcons.slice().reverse()]
-  // Ajuste rápido de velocidade: menor = mais rápido, maior = mais lento
   const trackSpeedOne = 26
   const trackSpeedTwo = 32
 

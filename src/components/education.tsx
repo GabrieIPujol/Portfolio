@@ -69,7 +69,6 @@ export function Education() {
         </motion.div>
 
         <div className="max-w-5xl mx-auto relative">
-          {/* Vertical animated line */}
           <motion.div
             className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-cyan-500 via-blue-500 to-cyan-500"
             initial={{ scaleY: 0 }}
@@ -87,7 +86,6 @@ export function Education() {
                 transition={{ duration: 0.8, delay: index * 0.3 }}
                 className={`relative flex ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8`}
               >
-                {/* Timeline node */}
                 <motion.div
                   className="absolute left-8 md:left-1/2 w-4 h-4 -translate-x-1/2 z-20"
                   initial={{ scale: 0 }}
@@ -137,7 +135,6 @@ export function Education() {
                         </div>
                       </div>
 
-                      {/* Animated lines decoration */}
                       <div className="absolute bottom-4 right-4 space-y-1 opacity-20">
                         {[...Array(3)].map((_, i) => (
                           <motion.div

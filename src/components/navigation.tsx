@@ -55,7 +55,6 @@ export function Navigation() {
               Portfolio
             </motion.div>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link, index) => (
                 <motion.button
@@ -103,7 +102,6 @@ export function Navigation() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div

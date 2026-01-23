@@ -28,7 +28,6 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-linear-to-b from-background via-background to-cyan-950/10 dark:to-cyan-950/20">
-      {/* Animated background gradient */}
       <div className="absolute inset-0 opacity-30">
         <motion.div
           className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
@@ -44,7 +43,6 @@ export function Footer() {
 
       <div className="container mx-auto px-4 py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -73,7 +71,6 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +95,6 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Connect section - CORRIGIDO PARA BLANK */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -112,8 +108,8 @@ export function Footer() {
                 <motion.a
                   key={index}
                   href={link.href}
-                  target="_blank"           // Abre em nova aba
-                  rel="noopener noreferrer" // Segurança adicional
+                  target="_blank"          
+                  rel="noopener noreferrer" 
                   className="group relative p-4 rounded-xl border border-border hover:border-cyan-500/50 bg-card/50 backdrop-blur-sm transition-all duration-300"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -131,7 +127,6 @@ export function Footer() {
           </motion.div>
         </div>
 
-        {/* Divider */}
         <div className="relative h-px bg-linear-to-r from-transparent via-border to-transparent mb-8">
           <motion.div
             className="absolute inset-0 bg-linear-to-r from-transparent via-cyan-500 to-transparent"
@@ -140,7 +135,6 @@ export function Footer() {
           />
         </div>
 
-        {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Portfolio. {t("footer.rights") || "All rights reserved."}

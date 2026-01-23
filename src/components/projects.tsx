@@ -118,10 +118,7 @@ function ProjectCard({ project, index, isInView }: any) {
         animate={isHovered ? { scale: 1.005 } : { scale: 1 }}
       />
 
-      {/* Card */}
       <div className="relative bg-card border-2 border-border rounded-3xl overflow-hidden h-full flex flex-col">
-        
-        {/* Shine effect on hover */}
         <motion.div
           className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent pointer-events-none"
           initial={{ x: "-100%" }}
@@ -129,12 +126,9 @@ function ProjectCard({ project, index, isInView }: any) {
           transition={{ duration: 0.6 }}
         />
 
-        {/* Top gradient bar */}
         <div className={`h-2 bg-linear-to-r ${project.gradient}`} />
 
-        {/* Content */}
         <div className="p-6 relative z-10 flex-1 flex flex-col">
-          {/* Preview image */}
           <div className="mb-4">
             <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-muted/30 aspect-16/10">
               <motion.img
@@ -149,7 +143,6 @@ function ProjectCard({ project, index, isInView }: any) {
             </div>
           </div>
 
-          {/* Corner sparkle */}
           <motion.div
             className="absolute top-4 right-4 pointer-events-none"
             animate={isHovered ? { rotate: 360, scale: 1.2 } : { rotate: 0, scale: 1 }}
@@ -168,7 +161,6 @@ function ProjectCard({ project, index, isInView }: any) {
             <p className="text-muted-foreground leading-relaxed min-h-16">{project.description}</p>
 
             <div className="mt-auto space-y-3">
-              {/* Tech stack */}
               <div className="flex flex-wrap gap-2 py-2">
                 {project.tech.map((tech: string, i: number) => (
                   <motion.span
@@ -181,10 +173,7 @@ function ProjectCard({ project, index, isInView }: any) {
                 ))}
               </div>
 
-              {/* Action buttons - AJUSTADO PARA MOBILE E TABLET */}
               <motion.div
-                // No desktop (lg), usamos a animação do Framer Motion baseada no isHovered
-                // No mobile/tablet, forçamos a opacidade para 1 via Tailwind
                 initial={{ opacity: 0 }}
                 animate={{ opacity: window.innerWidth < 1024 ? 1 : (isHovered ? 1 : 0) }}
                 className="flex gap-2 pt-2 min-h-11 relative z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
@@ -223,7 +212,6 @@ function ProjectCard({ project, index, isInView }: any) {
           </div>
         </div>
 
-        {/* Bottom decoration */}
         <div className={`absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t ${project.gradient} opacity-5 pointer-events-none`} />
       </div>
     </motion.div>
