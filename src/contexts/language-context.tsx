@@ -71,6 +71,14 @@ const translations = {
         title: "Snake Game",
         description: "A fun game, try to beat your high score!",
       },
+      project5: {
+        title: "CodeFlow",
+        description: "CodeFlow is a conceptual code editing and learning platform, developed as a study project to demonstrate skills in modern web development.",
+      },
+      project6: {
+        title: "Awwwards",
+        description: "landing page of the winning website of awwwards",
+      },
     },
     courses: {
       title: "Courses",
@@ -191,6 +199,14 @@ const translations = {
       project4: {
         title: "Jogo da Cobrinha",
         description: "Um jogo divertido, tente bater o seu recorde!",
+      },
+      project5: {
+        title: "CodeFlow",
+        description: "O CodeFlow é uma plataforma conceitual de edição de código e aprendizado, desenvolvida como um projeto de estudo para demonstrar habilidades em desenvolvimento web moderno."
+      },
+      project6: {
+        title: "Awwwards",
+        description: "landing page do site ganhador do awwwards!",
       },
     },
     courses: {

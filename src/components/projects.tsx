@@ -9,6 +9,8 @@ import projectImgForniture from "../assets/forniture-project.png"
 import projectImgPringles from "../assets/pringles-project.png"
 import projectImgProgress from "../assets/InProgress-project.png"
 import projectImgSnakeGame from "../assets/snakeGame-project.jpg"
+import projectImgCodeFlow from "../assets/codeFlow-project.png"
+import projectImgAwwwards from "../assets/awwwards-project.png"
 
 export function Projects() {
   const ref = useRef(null)
@@ -51,6 +53,24 @@ export function Projects() {
       image: projectImgSnakeGame,
       codeLink: "https://github.com/GabrieIPujol/Snake-Game",
       demoLink: "https://gabrieipujol.github.io/Snake-Game/",
+    },
+    {
+      title: t("projects.project5.title"),
+      description: t("projects.project5.description"),
+      tech: ["React", "TypeScript", "Tailwind"],
+      gradient: "from-cyan-600 to-blue-600",
+      image: projectImgCodeFlow,
+      codeLink: "https://github.com/GabrieIPujol/CodeFlow",
+      demoLink: "https://gabrieipujol.github.io/Snake-Game/",
+    },
+    {
+      title: t("projects.project6.title"),
+      description: t("projects.project6.description"),
+      tech: ["React", "JavaScript", "Tailwind"],
+      gradient: "from-cyan-600 to-blue-600",
+      image: projectImgAwwwards,
+      codeLink: "https://github.com/GabrieIPujol/Awwwards",
+      demoLink: "https://awwwards-flame.vercel.app/",
     },
   ]
 
@@ -134,7 +154,7 @@ function ProjectCard({ project, index, isInView }: any) {
               <motion.img
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 h-full w-full object-cover"
+                className="absolute inset-0 h-full w-full object-fill"
                 initial={{ scale: 1.02 }}
                 animate={isHovered ? { scale: 1.05 } : { scale: 1.02 }}
                 transition={{ duration: 0.4 }}
