@@ -61,7 +61,7 @@ export function Projects() {
       gradient: "from-cyan-600 to-blue-600",
       image: projectImgCodeFlow,
       codeLink: "https://github.com/GabrieIPujol/CodeFlow",
-      demoLink: "https://gabrieipujol.github.io/Snake-Game/",
+      demoLink: "https://gabrieipujol.github.io/CodeFlow/",
     },
     {
       title: t("projects.project6.title"),
