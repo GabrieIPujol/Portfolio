@@ -43,19 +43,44 @@ ________________________________________________________________________________
   💻 How to Use / Run Locally
   
   Clone the repository:
-  <img width="379" height="22" alt="image" src="https://github.com/user-attachments/assets/7a843977-caa6-4175-9601-1fdfbd82f276" />
+  
+  ```Shell
+    git clone https://github.com/GabrieIPujol/Portfolio.git
+  ```
+
+  <br>
   
   Enter the project folder:
-  <img width="89" height="15" alt="image" src="https://github.com/user-attachments/assets/2ee242bd-0b62-4314-84c9-7e5a801b694c" />
+    
+  ```Shell
+    cd Portfolio
+  ```
+
+  <br>
   
   Install the dependencies:
-  <img width="85" height="16" alt="image" src="https://github.com/user-attachments/assets/b0567cd3-8176-404a-84df-8cfb38146267" />
+      
+  ```Shell
+    npm install
+  ```
+
+  <br>
   
   Run the development server:
-  <img width="83" height="15" alt="image" src="https://github.com/user-attachments/assets/4d0d7de8-d152-49ff-9ea6-1629915838fb" />
+  
+  ```Shell
+    npm run dev
+  ```
+
+  <br>
   
   Open your browser and access:
-  <img width="246" height="16" alt="image" src="https://github.com/user-attachments/assets/c93316d9-5051-433b-82da-2a8f75748f63" />
+    
+  ```Shell
+    ➜ Local: http://localhost:5173/
+  ```
+
+  <br>
 _______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
   📦 Deploy
