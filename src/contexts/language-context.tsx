@@ -55,27 +55,27 @@ const translations = {
     projects: {
       title: "Projects",
       subtitle: "Some of the projects I developed during my career",
-      project1: {
+      projectForniture: {
         title: "E-commerce Store (Forniture)",
         description: "Complete online store with shopping cart, payment integration, and admin panel. - In Progress",
       },
-      project2: {
+      projectPringles: {
         title: "Pringles Website Redesign",
         description: "Restructuring of the Pringles Home Page, aiming to create a more modern and attractive interface for the user.",
       },
-      project3: {
-        title: "Online Car Dealership",
-        description: "An online car store, focused on bringing modernization and attracting customers who dream of getting a car.",
+      projectCineRetro: {
+        title: "Cine Retro",
+        description: "Cine Retro is a website that uses a movie API, with the goal of keeping movie enthusiasts always updated on new releases.",
       },
-      project4: {
+      projectSnakeGame: {
         title: "Snake Game",
         description: "A fun game, try to beat your high score!",
       },
-      project5: {
+      projectCodeFlow: {
         title: "CodeFlow",
         description: "CodeFlow is a conceptual code editing and learning platform, developed as a study project to demonstrate skills in modern web development.",
       },
-      project6: {
+      projectAwwwards: {
         title: "Awwwards",
         description: "landing page of the winning website of awwwards",
       },
@@ -184,27 +184,27 @@ const translations = {
     projects: {
       title: "Projetos",
       subtitle: "Alguns dos projetos que desenvolvi durante minha carreira",
-      project1: {
+      projectForniture: {
         title: "Loja Virtual (Forniture)",
         description: "Loja online completa com carrinho de compras, integração de pagamentos e painel administrativo. - Em andamento",
       },
-      project2: {
+      projectPringles: {
         title: "Reestruturação do Website Pringles",
         description: "Reestruturação da página inicial (Home Page) da Pringles, com o objetivo de criar uma interface mais moderna e atraente para o usuário.",
       },
-      project3: {
-        title: "Loja Virtual de Carros",
-        description: "Uma loja de carros online, com o foco em trazer modernização e atrair clientes que sonham em conseguir um carro.",
+      projectCineRetro: {
+        title: "Cine Retro",
+        description: "O Cine Retro é um site que utiliza uma API de filmes, com o objetivo de manter os cinéfilos sempre atualizados sobre os novos lançamentos.",
       },
-      project4: {
+      projectSnakeGame: {
         title: "Jogo da Cobrinha",
         description: "Um jogo divertido, tente bater o seu recorde!",
       },
-      project5: {
+      projectCodeFlow: {
         title: "CodeFlow",
         description: "O CodeFlow é uma plataforma conceitual de edição de código e aprendizado, desenvolvida como um projeto de estudo para demonstrar habilidades em desenvolvimento web moderno."
       },
-      project6: {
+      projectAwwwards: {
         title: "Awwwards",
         description: "landing page do site ganhador do awwwards!",
       },

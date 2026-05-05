@@ -7,10 +7,11 @@ import { Button } from "../components/ui/button"
 import { useLanguage } from "../contexts/language-context"
 import projectImgForniture from "../assets/forniture-project.png"
 import projectImgPringles from "../assets/pringles-project.png"
-import projectImgProgress from "../assets/InProgress-project.png"
+// import projectImgProgress from "../assets/InProgress-project.png"
 import projectImgSnakeGame from "../assets/snakeGame-project.jpg"
 import projectImgCodeFlow from "../assets/codeFlow-project.png"
 import projectImgAwwwards from "../assets/awwwards-project.png"
+import projectImgCineRetro from "../assets/cineRetro-project.png"
 
 export function Projects() {
   const ref = useRef(null)
@@ -19,17 +20,26 @@ export function Projects() {
 
   const projects = [
     {
-      title: t("projects.project1.title"),
-      description: t("projects.project1.description"),
-      tech: ["HTML", "CSS", "JavaScript"],  
-      gradient: "from-cyan-500 to-blue-500",
-      image: projectImgForniture,
-      codeLink: "https://github.com/GabrieIPujol/Furniture",
-      demoLink: "https://gabrieipujol.github.io/Furniture/src/assets/html/index.html",
+      title: t("projects.projectAwwwards.title"),
+      description: t("projects.projectAwwwards.description"),
+      tech: ["React", "JavaScript", "Tailwind"],
+      gradient: "from-cyan-600 to-blue-600",
+      image: projectImgAwwwards,
+      codeLink: "https://github.com/GabrieIPujol/Awwwards",
+      demoLink: "https://awwwards-flame.vercel.app/",
     },
     {
-      title: t("projects.project2.title"),
-      description: t("projects.project2.description"),
+      title: t("projects.projectCineRetro.title"),
+      description: t("projects.projectCineRetro.description"),
+      tech: ["VUE", "JavaScript", "API"],
+      gradient: "from-cyan-600 to-blue-600",
+      image: projectImgCineRetro,
+      codeLink: "https://github.com/GabrieIPujol/CineRetro",
+      demoLink: "https://gabrieipujol.github.io/CineRetro/#/",
+    },
+    {
+      title: t("projects.projectPringles.title"),
+      description: t("projects.projectPringles.description"),
       tech: ["HTML/CSS", "JavaScript/GSAP", "Frameworks"],
       gradient: "from-blue-500 to-cyan-600",
       image: projectImgPringles,
@@ -37,26 +47,8 @@ export function Projects() {
       demoLink: "https://gabrieipujol.github.io/Pringles-Project/Pringles/index.html",
     },
     {
-      title: t("projects.project3.title"),
-      description: t("projects.project3.description"),
-      tech: ["HTML/CSS", "JavaScript", "Frameworks"],
-      gradient: "from-cyan-600 to-blue-600",
-      image: projectImgProgress,
-      codeLink: "https://github.com/GabrieIPujol/CarDealership",
-      demoLink: "https://gabrieipujol.github.io/CarDealership/src/index.html",
-    },
-    {
-      title: t("projects.project4.title"),
-      description: t("projects.project4.description"),
-      tech: ["HTML", "CSS", "JavaScript"],
-      gradient: "from-cyan-600 to-blue-600",
-      image: projectImgSnakeGame,
-      codeLink: "https://github.com/GabrieIPujol/Snake-Game",
-      demoLink: "https://gabrieipujol.github.io/Snake-Game/",
-    },
-    {
-      title: t("projects.project5.title"),
-      description: t("projects.project5.description"),
+      title: t("projects.projectCodeFlow.title"),
+      description: t("projects.projectCodeFlow.description"),
       tech: ["React", "TypeScript", "Tailwind"],
       gradient: "from-cyan-600 to-blue-600",
       image: projectImgCodeFlow,
@@ -64,13 +56,22 @@ export function Projects() {
       demoLink: "https://gabrieipujol.github.io/CodeFlow/",
     },
     {
-      title: t("projects.project6.title"),
-      description: t("projects.project6.description"),
-      tech: ["React", "JavaScript", "Tailwind"],
+      title: t("projects.projectSnakeGame.title"),
+      description: t("projects.projectSnakeGame.description"),
+      tech: ["HTML", "CSS", "JavaScript"],
       gradient: "from-cyan-600 to-blue-600",
-      image: projectImgAwwwards,
-      codeLink: "https://github.com/GabrieIPujol/Awwwards",
-      demoLink: "https://awwwards-flame.vercel.app/",
+      image: projectImgSnakeGame,
+      codeLink: "https://github.com/GabrieIPujol/Snake-Game",
+      demoLink: "https://gabrieipujol.github.io/Snake-Game/",
+    },
+    {
+      title: t("projects.projectForniture.title"),
+      description: t("projects.projectForniture.description"),
+      tech: ["HTML", "CSS", "JavaScript"],
+      gradient: "from-cyan-500 to-blue-500",
+      image: projectImgForniture,
+      codeLink: "https://github.com/GabrieIPujol/Furniture",
+      demoLink: "https://gabrieipujol.github.io/Furniture/src/assets/html/index.html",
     },
   ]
 
@@ -198,35 +199,35 @@ function ProjectCard({ project, index, isInView }: any) {
                 animate={{ opacity: window.innerWidth < 1024 ? 1 : (isHovered ? 1 : 0) }}
                 className="flex gap-2 pt-2 min-h-11 relative z-20 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"
               >
-                 {project.codeLink && (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="gap-2 border-cyan-500/50 hover:bg-cyan-500/10 bg-transparent cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation(); 
-                        window.open(project.codeLink, "_blank");
-                      }}
-                    >
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                  )}
+                {project.codeLink && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="gap-2 border-cyan-500/50 hover:bg-cyan-500/10 bg-transparent cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(project.codeLink, "_blank");
+                    }}
+                  >
+                    <Github className="w-4 h-4" />
+                    Code
+                  </Button>
+                )}
 
-                  {project.demoLink && (
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="gap-2 border-blue-500/50 hover:bg-blue-500/10 bg-transparent cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.demoLink, "_blank");
-                      }}
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Demo
-                    </Button>
-                  )}
+                {project.demoLink && (
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    className="gap-2 border-blue-500/50 hover:bg-blue-500/10 bg-transparent cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(project.demoLink, "_blank");
+                    }}
+                  >
+                    <ExternalLink className="w-4 h-4" />
+                    Demo
+                  </Button>
+                )}
               </motion.div>
             </div>
           </div>
